@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Café Smakotella</title>
+  <link rel="stylesheet" href="smakotella.css">
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <!-- Навігація -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home" id="home-link">Home</a></li>
+      <li><a href="#cakes" id="cakes-link">Тістечка</a></li>
+      <li><a href="#bakery" id="bakery-link">Випічка</a></li>
+      <li><a href="#coffee" id="coffee-link">Кава</a></li>
+    </ul>
+  </nav>
+
+  <!-- Заголовок -->
+  <div class="content" id="home">
+    <h1>Café Smakotella</h1>
+    <p>Свіжа кава та свіжа Випічка</p>
+  </div>
+
+  <!-- Каталог -->
+  <section id="cakes" class="catalog">
+    <h2>Тістечка</h2>
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Чизкейк">
+      <h3>Чизкейк</h3>
+      <p>Ніжний десерт із вершковим сиром</p>
+      <span class="price">85 грн</span>
+    </div>
+  </section>
+
+  <section id="bakery" class="catalog">
+    <h2>Випічка</h2>
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1509440159598-6d5f92c5a08e" alt="Круасан">
+      <h3>Круасан</h3>
+      <p>Свіжоспечений з вершковим маслом</p>
+      <span class="price">45 грн</span>
+    </div>
+  </section>
+
+  <section id="coffee" class="catalog">
+    <h2>Кава</h2>
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772" alt="Капучино">
+      <h3>Капучино</h3>
+      <p>Ніжна кава з молочною пінкою</p>
+      <span class="price">65 грн</span>
+    </div>
+
+    
+    <div class="item">
+      <img src="https://img.postershop.me/cdn-cgi/image/width=1024,format=webp/https://img.postershop.me/15097/Products/4386291_1697110978.7027_original.jpg" alt="Флет Вайт">
+      <h3>Флет Вайт</h3>
+      <p>Подвійна кава кава з молочною пінкою</p>
+      <span class="price">65 грн</span>
+    </div>
+
+    <div class="item">
+      <img src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2024/04/16/una-taza-de-cafe-con-un-dibujo-creado-a-partir-de-la-leche.jpeg" alt="Лате">
+      <h3>Лате</h3>
+      <p>Ніжна кава з більшою кількістю молочної пінки ніж у Капучино</p>
+      <span class="price">65 грн</span>
+    </div>
+
+    <div class="item">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.86fDMEhnz1J1985y4tGpjQHaE7?w=750&h=499&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Айс Лате">
+      <h3>Айс Лате</h3>
+      <p> кава з молоком та кубиками льоду</p>
+      <span class="price">65 грн</span>
+    </div>
+    <div class="item">
+      <img src="https://cdn.discordapp.com/attachments/1248557848644816911/1407361499650981948/image.png?ex=68a5d309&is=68a48189&hm=69dca28dc3998d6cdeca5391f8bd04c7a2be45c947aad1dfac6ee2bc241c96df&" alt="Еспресо Тонік">
+      <h3>Еспресо Тонік</h3>
+      <p> кава з Indian Tonic та  кубиками льоду</p>
+      <span class="price">65 грн</span>
+    </div>
+    <div class="item">
+      <img src="https://wroclovefood.pl/wp-content/uploads/2022/12/Kawiarnia-Lukier-Wroclaw-1024x800.png" alt="Еспресо">
+      <h3>Еспресо</h3>
+      <p>Порція кави </p>
+      <span class="price">65 грн</span>
+    </div>
+    <div class="item">
+      <img src="https://kyivcityroast.com.ua/wp-content/uploads/2025/01/img_6890-750.webp" alt="Американо">
+      <h3>Американо</h3>
+      <p>Одна порція Еспресо та 100 мл води</p>
+      <span class="price">65 грн</span>
+    </div>
+    <div class="item">
+      <img src="https://kofella.net/images/stories/vseokofe/kofe-lungo.jpg" alt="Лунго">
+      <h3>Лунго</h3>
+      <p>Порція кави та пропущена вода з неї</p>
+      <span class="price">65 грн</span>
+    
+  </section>
+
+
+
+
+  <!-- Футер з контактами -->
+  <footer class="footer">
+    <p>Знаходження <a href="вул." target="_blank">вул.</a> | Телефон: +380 50 123 45 67</p>
+  </footer>
+
+  <!-- JS для плавного скролу та активного пункту -->
+  <script>
+    const sections = document.querySelectorAll('section, #home');
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    // Плавний скрол при натисканні
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        // Встановити активний пункт вручну при натисканні
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
+    // Підсвічування активного пункту при скролі
+    window.addEventListener('scroll', () => {
+      let current = 'home';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
